@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lists</h1>
+
+    <% @posts.each do |post| %>
+    <!-- <% user = @user.find_by(id: post.user_id) %> -->
+    <% favorites_count = Favorite.where(post_id: post.id).count %>
+        <%= link_to post, class: "image" do %>
+          <%= image_tag post.image %>
+          <p class="image_text"><i class="fas fa-heart"></i><%= "#{favorites_count}件" %></p>
+        <% end %>
+    <% end %>

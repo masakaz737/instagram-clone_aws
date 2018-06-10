@@ -1,0 +1,22 @@
+<h1><%= @user.name %></h1>
+<p>メールアドレス: <%= @user.email %></p>
+
+<ul class="user-tabs">
+  <li><%= link_to 'My post', @user %></li>
+  <li class="active"><%= link_to 'My favorites', "/users/#{@user.id}/favorites" %></li>
+</ul>
+
+<% @favorites.each do |favorite| %>
+<% post = Post.find_by(id: favorite.post_id) %>
+  <% favorites_count = Favorite.where(post_id: post.id).count %>
+  <%= link_to post, class: "image" do %>
+    <%= image_tag post.image %>
+    <p class="image_text"><i class="fas fa-heart"></i><%= "#{favorites_count}件" %></p>
+  <% end %>
+<% end %>
+
+<br>
+<br>
+<%= link_to posts_path do %>
+  <i class="fas fa-chevron-left"></i>もどる
+<% end %>

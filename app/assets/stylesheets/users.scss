@@ -1,0 +1,33 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+li{
+  list-style: none;
+}
+
+.user-tabs {
+  overflow: hidden;
+  padding: 0;
+}
+
+.user-tabs li {
+  float: left;
+}
+
+.user-tabs li.active {
+  border-bottom: 2px solid;
+}
+
+.user-tabs li.active a {
+  color: #57575f;
+}
+
+.user-tabs a {
+  display: inline-block;
+  padding: 10px 10px;
+  color: #afb6bf;
+}
+
+.create_account a{
+  color: #007bff;
+}

@@ -1,0 +1,45 @@
+i{
+  margin-right: 3px;
+}
+
+.image{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 100%;
+}
+
+.image_text{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding:inherit;
+  padding: 80px;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+
+.image:hover .image_text{
+  opacity: 1;
+}
+
+.fa-heart{
+  margin-right: 10px;
+}
+.like-btn{
+  color: #8899a6;
+}
+
+.like-btn-unlike{
+  color: #ff2581;
+}

@@ -1,0 +1,26 @@
+.navbar-brand{
+  font-family: cursive;
+}
+
+.main_header{
+  background-image: url("/top_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh ;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  display: table;
+  padding: 20px;
+}
+
+.footer_text{
+  color: #afb6bf;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}

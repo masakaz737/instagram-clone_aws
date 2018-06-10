@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @user.name %>
+</h2>
+
+<p>
+  <%= image_tag @post.image %>
+</p>
+
+<p>
+<% if @post.user == current_user %>
+  <i class="fas fa-heart like-btn-unlike"></i>
+<% else %>
+  <% if @favorite.present? %>
+    <%= link_to favorite_path(id: @favorite.id), method: :delete do %><i class="fas fa-heart like-btn-unlike"></i><% end %>
+  <% else %>
+    <%= link_to favorites_path(post_id: @post.id), method: :post do %><i class="fas fa-heart like-btn"></i><% end %>
+  <% end %>
+<% end %>
+<%= "いいね！#{@favorites_count}件" %>
+</p>
+
+<p>
+  <strong><%= @user.name %>:</strong>
+  <%= @post.content %>
+</p>
+
+<% if @post.user == current_user %>
+  <%= link_to edit_post_path(@post) do %>
+    <i class="fas fa-edit"></i>Edit
+  <% end %>
+    /
+  <%= link_to @post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <i class="fas fa-bomb"></i>Destroy
+  <% end %>
+<% end %>
+
+<br>
+<br>
+<%= link_to posts_path do %>
+  <i class="fas fa-chevron-left"></i>もどる
+<% end %>
