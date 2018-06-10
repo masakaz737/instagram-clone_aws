@@ -13,65 +13,64 @@
 
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">InstaClone</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="fas fa-home"></i>Home
-                <span class="sr-only">(current)</span></a>
+      <div class="row">
+        <div class="col-sm-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">InstaClone</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">
+                    <i class="fas fa-home"></i>Home
+                    <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <%= link_to posts_path, class:"nav-link" do %>
+                  <i class="fas fa-images"></i>Lists
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_post_path, class:"nav-link" do %>
+                <i class="fas fa-camera"></i>Create Post
+              <% end %>
+            </li>
+            <% if logged_in? %>
+              <li class="nav-item">
+                <%= link_to user_path(current_user.id), class:"nav-link" do %>
+                <i class="fas fa-user"></i>Profile
+              <% end %>
             </li>
             <li class="nav-item">
-              <%= link_to posts_path, class:"nav-link" do %>
-              <i class="fas fa-images"></i>Lists
+              <%= link_to session_path(current_user.id), method: :delete, class:"nav-link" do %>
+              <i class="fas fa-sign-out-alt"></i>Logout
             <% end %>
           </li>
+        <% else %>
           <li class="nav-item">
-            <%= link_to new_post_path, class:"nav-link" do %>
-            <i class="fas fa-camera"></i>Create Post
-          <% end %>
-        </li>
-        <% if logged_in? %>
-          <li class="nav-item">
-            <%= link_to user_path(current_user.id), class:"nav-link" do %>
-            <i class="fas fa-user"></i>Profile
+            <%= link_to new_user_path, class:"nav-link" do %>
+            <i class="fas fa-sign-out-alt"></i>Sign up
           <% end %>
         </li>
         <li class="nav-item">
-          <%= link_to session_path(current_user.id), method: :delete, class:"nav-link" do %>
-          <i class="fas fa-sign-out-alt"></i>Logout
+          <%= link_to new_session_path, class:"nav-link" do %>
+          <i class="fas fa-sign-in-alt"></i>Login
         <% end %>
       </li>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to new_user_path, class:"nav-link" do %>
-        <i class="fas fa-sign-out-alt"></i>Sign up
-      <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to new_session_path, class:"nav-link" do %>
-      <i class="fas fa-sign-in-alt"></i>Login
     <% end %>
-  </li>
-<% end %>
-</ul>
+  </ul>
 </div>
 </nav>
 
-<div class="row">
 <!-- <% flash.each do |key, value| %> <%= content_tag(:div, value, class: "#{key}") %> <% end %> -->
 
 <%= yield %>
+
+<!-- <footer> <p class="footer_text">© 2018 Copyright Insta_Clone powered by DIVE INTO CODE Co.</p> </footer> -->
 </div>
-
-<!-- <footer>
-  <p class="footer_text">© 2018 Copyright Insta_Clone powered by DIVE INTO CODE Co.</p>
-</footer> -->
-
+</div>
 </div>
 </body>
 </html>
