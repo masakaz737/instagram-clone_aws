@@ -11,19 +11,31 @@ body{
   line-height: 18px;
 }
 
+.container-fluid{
+  padding: 0;
+}
+
 .container{
   max-width: 100%;
   width:100%;
   position: relative;
   height: auto;
   min-height: 100%;
-  padding: 0;
+  padding-left: 15px;
+  padding-right: 15px
 }
 
 .row{
   display: block;
   margin: 0;
-  // padding-bottom: 60px;
+}
+
+.whole{
+  padding: 0;
+}
+
+.content{
+  padding-bottom: 60px;
 }
 
 p, ol, ul, td {

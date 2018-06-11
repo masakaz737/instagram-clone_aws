@@ -12,9 +12,7 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
+    <div class="container-fluid">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/">InstaClone</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,14 +61,18 @@
   </ul>
 </div>
 </nav>
+</div>
 
 <!-- <% flash.each do |key, value| %> <%= content_tag(:div, value, class: "#{key}") %> <% end %> -->
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
-<!-- <footer> <p class="footer_text">© 2018 Copyright Insta_Clone powered by DIVE INTO CODE Co.</p> </footer> -->
-</div>
-</div>
-</div>
+<!-- <footer class="footer">
+  <p>© 2018 Copyright Insta_Clone powered by DIVE INTO CODE Co.</p>
+</footer> -->
+
+
 </body>
 </html>
