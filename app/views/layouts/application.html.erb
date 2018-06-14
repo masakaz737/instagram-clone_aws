@@ -63,14 +63,13 @@
         </div>
       </nav>
 
-      <% flash.each do |key, value| %> <%= content_tag(:div, value, class: "#{key}") %> <% end %>
-
       <div class="container">
+        <% flash.each do |key, value| %> <%= content_tag(:div, value, id: "#{key}") %> <% end %>
         <%= yield %>
       </div>
 
       <footer class="footer">
-        <p>© 2018 Copyright Insta_Clone powered by DIVE INTO CODE Co.</p>
+        <p>© 2018 Copyright InstaClone powered by DIVE INTO CODE Co.</p>
       </footer>
 
     </div>

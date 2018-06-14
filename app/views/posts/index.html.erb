@@ -1,9 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Lists</h1>
 
     <% @posts.each do |post| %>
-    <!-- <% user = @user.find_by(id: post.user_id) %> -->
     <% favorites_count = Favorite.where(post_id: post.id).count %>
         <%= link_to post, class: "image" do %>
           <%= image_tag post.image %>
