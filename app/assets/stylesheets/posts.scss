@@ -24,13 +24,17 @@ i{
   align-items: center;
   text-align: center;
   padding:inherit;
-  padding:35%;
+  padding-left: 35%;
   background: rgba(0,0,0,0.5);
   opacity: 0;
 }
 
 .image:hover .image_text{
   opacity: 1;
+}
+
+.image_text i{
+  text-align: center;
 }
 
 .fa-heart{
@@ -42,4 +46,9 @@ i{
 
 .like-btn-unlike{
   color: #ff2581;
+}
+
+.field p{
+  margin-bottom: 0;
+  margin-top: 10px;
 }

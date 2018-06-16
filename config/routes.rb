@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :sessions, only:[:new, :create, :destroy]
   resources :users, only:[:new, :create, :show]
   get 'users/:id/favorites', to: 'users#favorites'
-  resources :posts
+  resources :posts do
+    collection do
+      post :confirm
+    end
+  end
   resources :favorites, only:[:create, :destroy]
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/inbox"

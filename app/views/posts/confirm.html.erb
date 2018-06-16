@@ -1,0 +1,24 @@
+<h1>確認画面</h1>
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+  <!-- 確認画面でアップロードした画像を表示させるための記述 -->
+  <div class="field">
+    <%= image_tag(@post.image) %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <p>Content:</p>
+    <%= @post.content %>
+    <%= form.hidden_field :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit "投稿する" %>
+  </div>
+<% end %>
+
+<%= form_with(model:@post, url:new_post_path, local:true, method:"get") do |form| %>
+  <div class="actions">
+    <%= form.hidden_field :image_cache %>
+    <%= form.hidden_field :content %>
+    <%= form.submit "もどる", name: "back" %>
+  </div>
+<% end %>
