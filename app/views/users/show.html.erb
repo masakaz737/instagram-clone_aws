@@ -10,7 +10,7 @@
   <% favorites_count = Favorite.where(post_id: post.id).count %>
   <%= link_to post, class: "image" do %>
     <%= image_tag post.image %>
-    <p class="image_text"><i class="fas fa-heart"></i><%= "#{favorites_count}件" %></p>
+    <p class="image_text"><i class="fas fa-heart"> <%= "#{favorites_count}件" %></i></p>
   <% end %>
 <% end %>
 

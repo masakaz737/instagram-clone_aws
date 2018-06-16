@@ -22,19 +22,17 @@ i{
   right: 0;
   display: flex;
   align-items: center;
-  text-align: center;
   padding:inherit;
-  padding-left: 35%;
   background: rgba(0,0,0,0.5);
   opacity: 0;
 }
 
-.image:hover .image_text{
-  opacity: 1;
+.image_text i{
+  margin: auto;
 }
 
-.image_text i{
-  text-align: center;
+.image:hover .image_text{
+  opacity: 1;
 }
 
 .fa-heart{
