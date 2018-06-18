@@ -13,14 +13,19 @@
   margin-left: -15px;
 }
 
-.footer{
+footer{
+  height: 60px;
   position: absolute;
   bottom: 0;
-  display: table;
-  padding: 15px 20px;
 }
 
-.footer p{
+.footer-content{
+  height: 100%;
+  padding: 0 15px;
+  display: table;
+}
+
+footer p{
   color: #afb6bf;
   display: table-cell;
   vertical-align: middle;
