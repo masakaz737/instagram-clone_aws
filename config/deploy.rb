@@ -5,7 +5,7 @@ lock '3.6.0'
 set :application, 'instagram-clone'
 
 # cloneするgitのレポジトリ（xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/masakaz737/instagram-clone.git'
+set :repo_url, 'https://github.com/masakaz737/instagram-clone_aws.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
